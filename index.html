@@ -24,7 +24,7 @@
     header {
       height: 100vh;
       background: 
-        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
         url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg') 
         center/cover no-repeat;
       display: flex;
@@ -34,6 +34,17 @@
       text-align: center;
       color: white;
       position: relative;
+    }
+
+    /* LOGO NO TOPO DO CABEÇALHO */
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 40px;
+      width: 120px;
+      /* 👉 Substitua pela URL da sua logo abaixo */
+      background: url('SUA_URL_DA_LOGO_AQUI') center/contain no-repeat;
+      height: 60px;
     }
 
     nav {
@@ -71,7 +82,7 @@
 
     header p {
       font-size: 1.3rem;
-      max-width: 600px;
+      max-width: 650px;
       animation: fadeIn 2.5s ease forwards;
     }
 
@@ -90,6 +101,7 @@
       font-size: 2rem;
       margin-bottom: 20px;
       color: #2f3e46;
+      text-align: center;
     }
 
     /* ----------- SERVIÇOS ----------- */
@@ -105,6 +117,7 @@
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: 0.3s ease;
+      text-align: center;
     }
 
     .card:hover {
@@ -140,19 +153,47 @@
       background-color: #3a5a40;
     }
 
-    /* ----------- CASES ----------- */
-    .cases {
-      background-color: #eaf4ea;
-      border-radius: 20px;
-      padding: 50px;
+    /* ----------- PLANOS ----------- */
+    .planos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
 
-    .case-item {
-      margin-bottom: 25px;
+    .plano {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
 
-    .case-item p {
-      font-style: italic;
+    .plano:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .plano h3 {
+      color: #3a5a40;
+      margin-bottom: 10px;
+    }
+
+    .preco {
+      font-size: 1.8rem;
+      color: #4CAF50;
+      margin: 15px 0;
+    }
+
+    .plano ul {
+      list-style: none;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .plano ul li {
+      margin-bottom: 8px;
       color: #555;
     }
 
@@ -168,7 +209,7 @@
       width: 300px;
       border-radius: 20px;
       object-fit: cover;
-      /* INSIRA AQUI a URL da foto da empreendedora */
+      /* 👉 Coloque aqui a URL da foto da empreendedora */
     }
 
     .sobre-texto {
@@ -195,54 +236,75 @@
 
   <nav>
     <a href="#servicos">Serviços</a>
-    <a href="#cases">Cases</a>
+    <a href="#planos">Planos</a>
     <a href="#sobre">Sobre</a>
   </nav>
 
   <header>
+    <div class="logo"></div> <!-- 👈 A logo aparecerá aqui -->
     <h1>Transforme sua presença digital</h1>
     <p>Gestão estratégica e criativa para suas redes sociais — destacando o seu trabalho no Instagram, TikTok e além.</p>
   </header>
 
   <!-- SEÇÃO SERVIÇOS -->
   <section id="servicos">
-    <h2>Serviços</h2>
+    <h2>Gestão de Redes Sociais</h2>
     <div class="services">
       <div class="card">
-        <img src="https://images.pexels.com/photos/744780/pexels-photo-744780.jpeg" alt="Análise de Instagram">
-        <h3>Análise de Instagram</h3>
-        <p>Identificação de oportunidades, melhorias visuais e crescimento orgânico do seu perfil.</p>
-        <a class="whatsapp-btn" href="https://wa.me/5517996094907?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Gestão%20de%20Instagram!">Falar no WhatsApp</a>
+        <img src="https://images.pexels.com/photos/744780/pexels-photo-744780.jpeg" alt="Gestão de Instagram">
+        <h3>Gestão de Instagram</h3>
+        <p>Estratégia de postagens, stories, legendas e identidade visual para fortalecer sua marca e atrair novos clientes.</p>
       </div>
 
       <div class="card">
         <img src="https://images.pexels.com/photos/5081930/pexels-photo-5081930.jpeg" alt="Gestão de TikTok">
         <h3>Gestão de TikTok</h3>
-        <p>Criação de cronogramas, tendências e identidade visual para expandir seu alcance.</p>
-        <a class="whatsapp-btn" href="https://wa.me/5517996094907?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Gestão%20de%20TikTok!">Falar no WhatsApp</a>
+        <p>Criação de vídeos criativos, roteiros e cronogramas com foco em tendências e engajamento real.</p>
       </div>
 
       <div class="card">
-        <img src="<!-- URL da imagem de pacotes mensais -->" alt="Pacotes Mensais">
-        <h3>Pacotes Mensais</h3>
-        <p>Tenha acompanhamento contínuo com planos sob medida para o seu negócio.</p>
-        <a class="whatsapp-btn" href="https://wa.me/55SEUNUMERO?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Pacotes%20Mensais!">Falar no WhatsApp</a>
+        <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt="Criação de Conteúdo">
+        <h3>Criação de Conteúdo</h3>
+        <p>Fotografia, design e ideias estratégicas para gerar conexões verdadeiras com o seu público.</p>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO CASES -->
-  <section id="cases">
-    <h2>Cases de Sucesso</h2>
-    <div class="cases">
-      <div class="case-item">
-        <p>"Em 2 meses, meu engajamento no Instagram cresceu 300%! Trabalho impecável e muita dedicação." — <strong>Cliente A</strong></p>
+  <!-- SEÇÃO PLANOS -->
+  <section id="planos">
+    <h2>Planos e Valores</h2>
+    <div class="planos">
+      <div class="plano">
+        <h3>Plano Essencial</h3>
+        <p class="preco">R$ 250/mês</p>
+        <ul>
+          <li>8 postagens mensais</li>
+          <li>Criação de legendas e hashtags</li>
+          <li>Suporte básico via WhatsApp</li>
+        </ul>
+        <a class="whatsapp-btn" href="https://wa.me/5517996094907?text=Olá,%20quero%20saber%20mais%20sobre%20o%20Plano%20Essencial!">Falar no WhatsApp</a>
       </div>
-      <div class="case-item">
-        <p>"Meu TikTok explodiu de visualizações! Recomendo demais o serviço." — <strong>Cliente B</strong></p>
+
+      <div class="plano">
+        <h3>Plano Profissional</h3>
+        <p class="preco">R$ 400/mês</p>
+        <ul>
+          <li>12 postagens mensais</li>
+          <li>Stories e reels otimizados</li>
+          <li>Análise de resultados mensal</li>
+        </ul>
+        <a class="whatsapp-btn" href="https://wa.me/5517996094907?text=Olá,%20quero%20saber%20mais%20sobre%20o%20Plano%20Profissional!">Falar no WhatsApp</a>
       </div>
-      <div class="case-item">
-        <p>"Profissional super atenciosa e criativa. Me ajudou a definir uma identidade incrível nas redes." — <strong>Cliente C</strong></p>
+
+      <div class="plano">
+        <h3>Plano Premium</h3>
+        <p class="preco">R$ 600/mês</p>
+        <ul>
+          <li>20 postagens mensais</li>
+          <li>Gestão completa de Instagram e TikTok</li>
+          <li>Relatórios e reuniões de performance</li>
+        </ul>
+        <a class="whatsapp-btn" href="https://wa.me/55SEUNUMERO?text=Olá,%20quero%20saber%20mais%20sobre%20o%20Plano%20Premium!">Falar no WhatsApp</a>
       </div>
     </div>
   </section>
@@ -251,21 +313,18 @@
   <section id="sobre">
     <h2>Sobre a Profissional</h2>
     <div class="sobre">
-      <img src="<!-- URL da foto da empreendedora -->" alt="Foto da empreendedora">
+      <img src="SUA_URL_DA_FOTO_AQUI" alt="Foto da empreendedora">
       <div class="sobre-texto">
-        <p>Olá! Sou uma apaixonada por comunicação e marketing digital. Meu propósito é ajudar pequenas marcas e profissionais autônomos a crescerem nas redes sociais de forma autêntica e criativa. Acredito no poder das boas histórias contadas com estratégia e emoção.</p>
+        <p>Olá! Sou apaixonada por comunicação e marketing digital. Ajudo marcas e profissionais autônomos a crescerem nas redes sociais de forma autêntica, com estratégia e criatividade.</p>
         <br>
-        <a class="whatsapp-btn" href="https://wa.me/55SEUNUMERO?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços!">Falar comigo</a>
+        <a class="whatsapp-btn" href="https://wa.me/5517996094907?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços!">Falar comigo</a>
       </div>
     </div>
   </section>
 
   <footer>
-    © 2025 Studio Criativo — Todos os direitos reservados.
+    © 2025 Jakt — Todos os direitos reservados.
   </footer>
 
 </body>
 </html>
-
-
-
